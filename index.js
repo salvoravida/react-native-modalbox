@@ -344,7 +344,7 @@ var ModalBox = createReactClass({
       }
     };
 
-    var animEvt = Animated.event([null, {customY: this.state.position}]);
+    var animEvt = Animated.event([null, {customY: this.state.position}], { useNativeDriver: false });
 
     var onPanMove = (evt, state) => {
       var newClosingState = this.props.entry === 'top' ? -state.dy > this.props.swipeThreshold : state.dy > this.props.swipeThreshold;
